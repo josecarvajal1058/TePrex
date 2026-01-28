@@ -1,0 +1,91 @@
+<!--
+    Integrantes:
+    - Jose Manuel Carvajal Florentino - A00156381
+    -
+    Fecha:28/01/2026
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TePre - Tu biblioteca preferida</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://covers.openlibrary.org">
+    <link rel="dns-prefetch" href="https://covers.openlibrary.org">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">TE<br>&nbsp;&nbsp;PREX</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="prestamos.html" class="active">Préstamos</a></li>
+                <li><a href="index.html#mainContent">Catálogo</a></li>
+                <li><a href="#">Mi Cuenta</a></li>
+            </ul>
+            <div class="search-wrapper">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Buscar libros, autores, código..."
+                        autocomplete="off">
+                    <button class="search-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="searchSuggestions" class="search-suggestions hidden"></div>
+            </div>
+        </div>
+    </nav>
+    <div style="height: 100px;"></div>
+    <section id="historySection" class="history-section reveal active" style="min-height: 60vh;">
+        <div class="section-header">
+            <h2 class="section-title">Mis Préstamos</h2>
+            <p class="section-desc">Historial completo de tus lecturas.</p>
+            <button id="clearHistoryBtn" class="btn-clear-history">Limpiar Historial</button>
+        </div>
+        <div class="table-wrapper">
+            <table id="loansTable" class="detailed-history">
+                <thead>
+                    <tr>
+                        <th>Portada</th>
+                        <th>Libro</th>
+                        <th>Ubicación</th>
+                        <th>Código</th>
+                        <th>Días</th>
+                        <th>Entrega</th>
+                    </tr>
+                </thead>
+                <tbody id="loansHistoryBody"></tbody>
+            </table>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo-text">TE<br>&nbsp;&nbsp;PREX</div>
+                </div>
+                <div class="footer-student-info">
+                    <p class="student-name">Jose Manuel Carvajal Florentino</p>
+                    <p class="student-id">ID: A00156381</p>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2026 TePre. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
