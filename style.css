@@ -522,15 +522,20 @@ main {
     background: var(--white);
     width: 950px;
     max-width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
     border-radius: 32px;
-    overflow: hidden;
-    transform: translateY(50px);
+    transform: translateY(50px) translateZ(0);
+    backface-visibility: hidden;
+    outline: none;
     transition: var(--transition-smooth);
     box-shadow: 0 30px 60px rgba(32, 22, 47, 0.2);
+    display: flex;
+    flex-direction: column;
 }
 
 .modal.visible .modal-container {
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
 }
 
 .close-modal {
@@ -546,7 +551,7 @@ main {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 10;
+    z-index: 100;
     transition: var(--transition-smooth);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -876,6 +881,24 @@ tr:last-child td {
     line-height: 1.4;
 }
 
+@media (max-width: 1024px) {
+    .nav-container {
+        padding: 0 4%;
+    }
+
+    .search-wrapper {
+        flex: 0 0 350px;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .modal-container {
+        width: 90%;
+    }
+}
+
 @media (max-width: 992px) {
     .hero-title {
         font-size: 3.5rem;
@@ -887,10 +910,163 @@ tr:last-child td {
 
     .modal-visual {
         height: 300px;
+        min-height: auto;
     }
 
     .modal-details {
         padding: 2rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-brand,
+    .footer-student-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo-text {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 0;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .search-wrapper {
+        order: 2;
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .hero {
+        padding: 10rem 4% 4rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        letter-spacing: -1px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-actions {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .category-title {
+        font-size: 2rem;
+    }
+
+    .book-card {
+        flex: 0 0 280px;
+    }
+
+    .book-cover-wrapper {
+        height: 350px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .table-wrapper {
+        padding: 1rem;
+        border-radius: 20px;
+    }
+
+    th,
+    td {
+        padding: 1rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .search-bar {
+        padding: 0.3rem 0.3rem 0.3rem 1rem;
+    }
+
+    .search-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .book-card {
+        flex: 0 0 240px;
+    }
+
+    .book-cover-wrapper {
+        height: 300px;
+    }
+
+    .modal-container {
+        width: 95%;
+        max-height: 95vh;
+        border-radius: 24px;
+    }
+
+    .modal-details {
+        padding: 1.5rem;
+    }
+
+    #modalTitle {
+        font-size: 1.8rem;
+    }
+
+    .authors-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .author-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .close-modal {
+        top: 1rem;
+        right: 1rem;
+        width: 36px;
+        height: 36px;
     }
 }
 
